@@ -1,0 +1,43 @@
+doctype html
+html(lang='fr')
+  head
+    meta(charset="utf-8")
+    title= title
+    link(rel='stylesheet', href='/stylesheets/foundation.min.css')
+    link(rel='stylesheet', href='/stylesheets/app.css')
+    link(rel='stylesheet', href='/stylesheets/css_loader.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="/javascripts/vendor/jquery.js")
+    script(src="/javascripts/lib/script.js")
+    script(src="/javascripts/lib/excellentexport.js")
+  body
+    .large-6.columns
+      ul.menu.align-center
+        li.menu-text
+          a.menu.align-right.button.secondary(href="r2d2") |2.2.D.2
+        li.menu-text
+          a.menu.align-right.button.secondary(href="bb8droid") |3.|3.8.droid
+    hr
+    block content
+    hr
+    footer
+            .row.expanded.callout.secondary
+                .large-4.columns
+                    h5 Proximity BBDO Indian Ocean || Zeb
+                    .row.small-up-4
+                        .column
+                        img(src="/images/proximity-log.png", alt="proximity bbdo")
+                .large-4.columns
+                    h5 Contributeur
+                    span.secondary.label Ricky B.
+                .large-4.columns
+                    h5 Notice
+                    p Zeb hub || r2d2 || bb8 Droid
+            .row.expanded
+                .medium-12.columns
+                ul.menu.align-right
+                    li.menu-text Copyright © 2017
+    script(src="/javascripts/lib/r2d2.js")
+    script(src="/javascripts/vendor/what-input.js")
+    script(src="/javascripts/vendor/foundation.min.js")
+    script(src="/javascripts/app.js")

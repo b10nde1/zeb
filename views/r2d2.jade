@@ -1,0 +1,48 @@
+extends layout
+
+block content
+  .row#div_application
+        .row
+            .medium-4.columns
+                h1 Configuration
+                input#target(type='text', placeholder='URL du xml')
+                input#queryWhere(type='text', placeholder='Paramatre de recherche')
+                .medium-4.medium-offset-8.columns
+                    input#sendRequest.menu.align-right.button.secondary(type='button', value='Valider',onclick="startRequest()")
+            .medium-4.columns
+                h1 Statistiques
+                p Total Url testé :: 
+                    span#totalUrlTested
+                p Total Url en rapport a la recherche :: 
+                    span#totalUrl
+                p Total Https :: 
+                    span#totalUrlHttps
+                p Total Http :: 
+                    span#totalUrlHttp
+            .medium-4.columns
+                h1 Recherche
+                .large-12.columns
+                    input#searchByUrl(type='text', placeholder="Recherche")
+        .row
+            .medium-6.columns
+                .row                    
+                    h1 Résultats
+                    .row(style="overflow:auto;height:500px")
+                        span#upData
+                    br
+                    .row
+                        #div_option_all.medium-offset-9.columns.button-group(style="display:none")
+                            a#copy_all_result.menu.align-right.button.secondary(onclick="copyElement(document.getElementById('upData'))") Copie
+                            a#csv_all_result.menu.align-right.button.secondary(href="#",download="CSV_export_all_url.csv",onclick="return ExcellentExport.csv(this,'table_result');") CSV
+            .medium-5.large-offset-1.columns
+                .row                    
+                    h1 Error 404
+                    .row(style="overflow:auto;height:500px")
+                        span#upDataError
+                    br
+                    .row
+                        #div_option_404.medium-offset-9.columns.button-group(style="display:none")
+                            a#copy_404_result.menu.align-right.button.secondary(onclick="copyElement(document.getElementById('upDataError'))") Copie
+    .row#div_loader(style="display:none")
+        section.section-app-loader
+            span.loader.loader-app 
