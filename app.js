@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
 var bb8_droid = require('./routes/bb8_droid');
 var r2d2 = require('./routes/r2d2');
 

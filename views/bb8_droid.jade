@@ -1,4 +1,13 @@
 extends layout
 
 block content
-    .row(style="height:500px")
+    form(method="POST")
+        #overview.row
+        #data_bb8_droid.row(align="center")
+            .large-6.columns
+                textarea#textarea1(style="overflow:auto;height:500px;width:500px")
+            .large-6.columns
+                textarea#textarea2(style="overflow:auto;height:500px;width:500px")
+        .row
+            .large-2.large-offset-10.columns
+                input#compare_bb8_droid.menu.button.secondary(type="submit",value="Comparer")
