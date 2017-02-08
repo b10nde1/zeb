@@ -1,26 +1,23 @@
 var express = require('express');
 var router = express.Router();
+var diffjs=require('diff');
 
-/*require('colors');
-var jsdiff = require('/usr/local/lib/node_modules/diff');
-
-var one = 'beep boop';
-var other = 'beep boob blah';
-var diff = jsdiff.diffChars(one, other);
-diff.forEach(function(part){
-  // green for additions, red for deletions
-  // grey for common parts
-  var color = part.added ? 'green' :
-    part.removed ? 'red' : 'grey';
-    //process.stderr.write(part.value[color]);
-});*/
-
-/* GET home page. */
 router.get('/', function(req, res, next) {  
   res.render('bb8_droid', { title: 'Zeb-bb8_droid' });
 });
+
 router.post('/',function(req,res){
-  console.log("salut");
+  var textarea1=req.body.textarea1, textarea2=req.body.textarea2, diff = diffjs.diffChars(textarea1, textarea2),result="Les texts correspondent",indice='color:green';
+  diff.forEach(function(part){
+    if(part.added || part.removed)result="Des erreurs entre les texts",indice='color:red';
+  });
+  res.render('bb8_droid',{
+    title:'Zeb-bb8_droid',
+    textValueToUp: result,
+    indiceColor : indice,
+    textarea1Up : textarea1,
+    textarea2Up : textarea2
+  });
 });
 
 module.exports = router;

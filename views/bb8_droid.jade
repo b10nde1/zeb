@@ -2,12 +2,13 @@ extends layout
 
 block content
     form(method="POST")
-        #overview.row
+        #overview.row(align='center')
+            p(style= indiceColor)= textValueToUp
         #data_bb8_droid.row(align="center")
             .large-6.columns
-                textarea#textarea1(style="overflow:auto;height:500px;width:500px")
+                textarea#textarea1(name="textarea1",style="overflow:auto;height:500px;width:500px")= textarea1Up
             .large-6.columns
-                textarea#textarea2(style="overflow:auto;height:500px;width:500px")
+                textarea#textarea2(name="textarea2",style="overflow:auto;height:500px;width:500px")= textarea2Up
         .row
             .large-2.large-offset-10.columns
                 input#compare_bb8_droid.menu.button.secondary(type="submit",value="Comparer")
